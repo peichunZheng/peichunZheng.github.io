@@ -1,0 +1,988 @@
+<!-- for迴圈版 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>桃園機場工程進度管理</title>
+	<script src="./js/jquery-3.5.1.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/scripts.js"></script>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+	
+
+	
+		<script>
+
+			var allData = {};
+			var lastRow = 0;
+			var lastColumn = 0;
+			getAllData();
+
+			function getAllData() {
+			var parameter = {
+				// url: 'https://docs.google.com/spreadsheets/d/12TeUZwu_ZsWZmwfT6s2EKYeo2tPuNQIWtExbyQQJ9gg/edit#gid=0',
+				url:'https://docs.google.com/spreadsheets/d/1Z5_P_4Ydb0_fxV2igGFIghGpVXjElki0dh_RWyYMpDc/edit#gid=0',
+				name: '二航北2N',
+				startRow: 1,
+				startColumn: 1
+			};
+			
+			$.get('https://script.google.com/macros/s/AKfycbyTlg1W_YBt5aOQimIcIjtd_U72QfWgF2jBdnAa0jXsoRUGt_D8/exec', parameter, function(data) {
+				console.log(data);
+				if(!data){
+					allData = {};
+				}else{
+					allData = data.split(',');
+					lastRow = allData[0];
+					lastColumn = allData[1];
+				}
+				console.log(allData);
+				console.log(lastRow);
+				console.log(lastColumn);
+
+				for(j = 1; j < 4; j++){
+					for(i = 1; i < 11 ;i++){
+						//pic1  編號
+						//      狀態
+						//		備註 
+						setData(document.getElementById('dataPic'+j+'_'+i+'_1'), (i+1)+10*(j-1) , 2);
+						setData(document.getElementById('dataPic'+j+'_'+i+'_2'), (i+1)+10*(j-1) , 3);
+						setData(document.getElementById('dataPic'+j+'_'+i+'_3'), (i+1)+10*(j-1) , 4);
+
+						// setData(document.getElementById('picdataPic'+j+'_'+i+'_1'), (i+1)+6*(j-1) , 2);
+						// setData(document.getElementById('picataPic'+j+'_'+i+'_2'), (i+1)+6*(j-1) , 3);
+						// setData(document.getElementById('picdataPic'+j+'_'+i+'_3'), (i+1)+6*(j-1) , 4);
+
+						}
+
+				}
+				
+				for(j = 1; j < 4; j++){
+					for(i = 1; i < 11 ;i++){
+						//pic1  編號
+						//      狀態
+						//		備註 
+											picData(document.getElementById('picdataPic'+j+'_'+i+'_1'), (i+1)+10*(j-1) , 2);
+						picData(document.getElementById('picdataPic'+j+'_'+i+'_2'), (i+1)+10*(j-1) , 3);
+						// $("p:contains(準備中)").css("color" ,"red");
+						// $("h6:contains(準備中)").css({"color":"red","font-size":"200%"});
+						$("h1:contains(準備中)").css("background-color","yellow" );
+						
+						$("h1:contains(施工中)").css("background-color","green" );
+						// setData(document.getElementById('picdataPic'+j+'_'+i+'_3'), (i+1)+6*(j-1) , 4);
+
+
+						}
+
+				}								
+
+			});
+			}
+
+			function setData(aId, aRow, aColumn) {
+				console.log('setData');
+				
+					if(allData && aRow <= lastRow && aColumn <= lastColumn) {
+						aId.innerHTML = allData[(aRow-1)*lastColumn+(aColumn-1)+2];
+					}
+
+			}
+
+
+			function picData(aId, aRow, aColumn) {
+				console.log('picData');
+				
+					if(allData && aRow <= lastRow && aColumn <= lastColumn) {
+						aId.innerHTML = allData[(aRow-1)*lastColumn+(aColumn-1)+2];
+						// $("p:contains(準備中)").css("color" ,"green");
+						// if(allData[(aRow-1)*lastColumn+(aColumn-1)+2] =="準備中"){
+						// 	$("#firPic1_num").css("color" ,"red");
+
+
+						// }
+
+
+					}
+			}
+		</script>
+
+	 <style>
+		* {	margin: 0px;
+			padding: 10px;
+		
+		}
+		th ,td
+		{
+		height:100px;
+		font-size: 40px;
+		}
+		.text_color{
+			color: firebrick;
+		}
+		.firPic1_num { 
+            position: absolute; 
+            top: 720px; 
+            left: 1050px; 
+			/* background-color: #3fd8114f */
+			/* text-align: center */
+			border-radius: 15px;
+			background: #F3CE5E;
+  			/* animation: 2s counterclockwise infinite; */
+        } 
+		.firPic1_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 1050px; 
+			border-radius: 15px;
+			background: #F3CE5E;
+			/* background: #80ced6 */
+
+        } 
+		.firPic2_num { 
+            position: absolute; 
+			top: 720px; 
+            left: 830px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic2_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 830px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic3_num { 
+            position: absolute; 
+			top: 720px; 
+            left: 600px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.firPic3_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 600px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }  
+		.firPic4_num { 
+            position: absolute; 
+            top: 720px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic4_sta { 
+            position: absolute; 
+            top: 760Px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic5_num { 
+            position: absolute; 
+            top: 720px; 
+            left: 100px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic5_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 100px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic6_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 1050px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic6_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 1050px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.firPic7_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 800px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic7_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 800px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.firPic8_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 550px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic8_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 550px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.firPic9_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic9_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.firPic10_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 180px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.firPic10_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 180px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		/* <!--圖片2的css--> */
+
+		.secPic1_num { 
+            position: absolute; 
+			top: 760px; 
+            left: 1050px; 	
+			border-radius: 15px;
+			background: #F3CE5E;
+        } 
+		.secPic1_sta { 
+            position: absolute; 
+            top: 800px; 
+            left: 1050px; 
+			border-radius: 15px;
+			background: #F3CE5E;
+			/* background: #80ced6 */
+        } 
+		.secPic2_num { 
+            position: absolute; 
+			top: 760px; 
+            left: 830px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic2_sta { 
+            position: absolute; 
+            top: 800px; 
+            left: 830px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic3_num { 
+            position: absolute; 
+			top: 760px; 
+            left: 600px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.secPic3_sta { 
+            position: absolute; 
+            top: 800px; 
+            left: 600px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }  
+		.secPic4_num { 
+            position: absolute; 
+            top: 760px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic4_sta { 
+            position: absolute; 
+            top: 800px; 
+            left: 350px;
+			border-radius: 15px;
+			
+			background-color: #80ced6
+        } 
+		.secPic5_num { 
+            position: absolute; 
+            top: 760px; 
+            left: 150px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic5_sta { 
+            position: absolute; 
+            top: 800px; 
+            left: 150px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		
+		.secPic6_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 1050px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic6_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 1050px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.secPic7_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 800px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic7_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 800px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+
+		.secPic8_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 600px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic8_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 600px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.secPic9_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 800px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic9_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 800px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.secPic10_num { 
+            position: absolute; 
+            top: 260px; 
+            left: 80px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic10_sta { 
+            position: absolute; 
+            top: 300px; 
+            left: 80px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		/* <!--圖片3的css--> */
+		.thrPic1_num { 
+            position: absolute; 
+			top: 720px; 
+            left: 1050px; 	
+			border-radius: 15px;
+			background: #F3CE5E;
+        } 
+		.thrPic1_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 1050px; 
+			border-radius: 15px;
+			background: #F3CE5E;
+			/* background: #80ced6 */
+
+        } 
+		.thrPic2_num { 
+            position: absolute; 
+			top: 720px; 
+            left: 820px; 
+			border-radius: 15px;
+			background-color: #80ced6
+			
+        } 
+		.thrPic2_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 820px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic3_num { 
+            position: absolute; 
+			top: 720px; 
+            left: 600px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.thrPic3_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 600px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }  
+		.thrPic4_num { 
+            position: absolute; 
+            top: 720px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic4_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic5_num { 
+            position: absolute; 
+            top: 720px; 
+            left: 100px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic5_sta { 
+            position: absolute; 
+            top: 760px; 
+            left: 100px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic6_num { 
+            position: absolute; 
+            top: 250px; 
+            left: 1050px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic6_sta { 
+            position: absolute; 
+            top: 290px; 
+            left: 1050px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.thrPic7_num { 
+            position: absolute; 
+            top: 250px; 
+            left: 820px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic7_sta { 
+            position: absolute; 
+            top: 290px; 
+            left: 820px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.thrPic8_num { 
+            position: absolute; 
+            top: 250px; 
+            left: 550px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic8_sta { 
+            position: absolute; 
+            top: 290px; 
+            left: 550px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.thrPic9_num { 
+            position: absolute; 
+            top: 250px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic9_sta { 
+            position: absolute; 
+            top: 290px; 
+            left: 350px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.thrPic10_num { 
+            position: absolute; 
+            top: 250px; 
+            left: 200px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.thrPic10_sta { 
+            position: absolute; 
+            top: 290px; 
+            left: 200px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+
+
+
+	</style> 
+
+
+  </head>
+  <body>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="text-center"   font-size: 400px>
+				第一、二航廈照明及設備改善工程
+			</h2>
+			<p class="text-center" >
+				工程進度、追蹤
+			</p> 
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link active" href="http://www.ntu.edu.tw"> 一航北1N 2F 3F RF</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://yahoo.com">一航南1S 2F 3F RF</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">一航主體1T2F B</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">二航北2N 1F 2F 3F</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">二航南2S 1F 2F 3F</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">二航主體2T06 7-11 B </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">二航主體2T1F 2F 3F RF </a>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+<!--圖片一-->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
+							1AEL-2N1F 01-08  二航北2N 1F 
+						</h3>
+						<div class="row">
+							<div class="col-md-2" style="background-color: rgb(167, 247, 239, 0.3);">
+								<div>
+								
+								</div>
+							</div>
+							<div class="col-md-5" >
+								<div class="ex1">
+									<img alt="1AEL-2N1F 01-06"  src="../imageprocessing/1AEL-2N1F.png"  style="border:2px   #ccc solid;padding:1px;"width="1400px",height="900px">
+									<h6 class="firPic1_num" id = "picdataPic1_1_1" > </h6>
+									<h1 class="firPic1_sta" id = "picdataPic1_1_2"></h1>
+
+									<h6 class="firPic2_num" id = "picdataPic1_2_1"></h6>
+									<h1 class="firPic2_sta" id = "picdataPic1_2_2"></h1>
+									
+									<h6 class="firPic3_num" id = "picdataPic1_3_1"></h6> 
+									<h1 class="firPic3_sta" id = "picdataPic1_3_2"></h1> 
+
+									<h6 class="firPic4_num" id = "picdataPic1_4_1"></h6> 
+									<h1 class="firPic4_sta" id = "picdataPic1_4_2"></h1> 
+
+									<h6 class="firPic5_num" id = "picdataPic1_5_1"></h6>
+									<h1 class="firPic5_sta" id = "picdataPic1_5_2"></h1>  
+  
+									<h6 class="firPic6_num" id = "picdataPic1_6_1"></h6> 
+									<h1 class="firPic6_sta" id = "picdataPic1_6_2"></h1> 
+
+									<h6 class="firPic7_num" id = "picdataPic1_7_1"></h6> 
+									<h1 class="firPic7_sta" id = "picdataPic1_7_2"></h1> 
+
+									<h6 class="firPic8_num" id = "picdataPic1_8_1"></h6> 
+									<h1 class="firPic8_sta" id = "picdataPic1_8_2"></h1> 
+
+									<h6 class="firPic9_num" id = "picdataPic1_9_1"></h6> 
+									<h1 class="firPic9_sta" id = "picdataPic1_9_2"></h1> 
+
+									<h6 class="firPic10_num" id = "picdataPic1_10_1"></h6> 
+									<h1 class="firPic10_sta" id = "picdataPic1_10_2"></h1> 
+
+									
+								</div>
+							</div>
+							<div class="col-md-1" >
+								<div>
+								
+								</div>
+							</div>
+							<div class="col-md-3">
+								<table class="table table-hover" style="text-align: center;" >
+									<thead>
+										<tr>
+											<th> 編號</th>
+											<th> 進度狀態</th>
+											<th> 備註</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td id = "dataPic1_1_1" ></td>
+											<td id = "dataPic1_1_2"></td>
+											<td id = "dataPic1_1_3"></td>
+										</tr>
+										<tr >
+											<td id = "dataPic1_2_1"></td>
+											<td id = "dataPic1_2_2"></td>
+											<td	id = "dataPic1_2_3" ></td>
+										</tr>
+										<tr>
+											<td id = "dataPic1_3_1"></td>
+											<td	id = "dataPic1_3_2"></td>
+											<td id = "dataPic1_3_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic1_4_1"></td>
+											<td id = "dataPic1_4_2"></td>
+											<td id = "dataPic1_4_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic1_5_1"></td>
+											<td id = "dataPic1_5_2"></td>
+											<td id = "dataPic1_5_3"></td>
+										</tr>					
+										<tr>
+											<td id = "dataPic1_6_1"></td>
+											<td id = "dataPic1_6_2"></td>
+											<td id = "dataPic1_6_3"></td>
+										</tr>
+										<tr >
+											<td id = "dataPic1_7_1"></td>
+											<td id = "dataPic1_7_2"></td>	
+											<td	id = "dataPic1_7_3" ></td>
+										</tr>
+										<tr >
+											<td id = "dataPic1_8_1"></td>
+											<td id = "dataPic1_8_2"></td>	
+											<td	id = "dataPic1_8_3" ></td>
+										</tr>
+										<tr >
+											<td id = "dataPic1_9_1"></td>
+											<td id = "dataPic1_9_2"></td>	
+											<td	id = "dataPic1_9_3" ></td>
+										</tr>
+										<tr >
+											<td id = "dataPic1_10_1"></td>
+											<td id = "dataPic1_10_2"></td>	
+											<td	id = "dataPic1_10_3" ></td>
+										</tr>
+									</tbody>
+								</table>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<!--圖片二-->
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
+							1AEL-2N2F 01-08  二航北2N 2F 
+						</h3>
+						<div class="row">
+							<div class="col-md-2" style="background-color: rgb(167, 247, 239);">
+								<div>
+								
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="ex1">
+									<img alt="1AEL-2N2F 01-08"  src="../imageprocessing/1AEL-2N2F.png" style="border:2px    #ccc solid;padding:1px;" width="1400px",height="900px">
+									<h6 class="secPic1_num" id = "picdataPic2_1_1" > </h6>
+									<h1 class="secPic1_sta" id = "picdataPic2_1_2"></h1>
+
+									<h6 class="secPic2_num" id = "picdataPic2_2_1"></h6>
+									<h1 class="secPic2_sta" id = "picdataPic2_2_2"></h1>
+									
+									<h6 class="secPic3_num" id = "picdataPic2_3_1"></h6> 
+									<h1 class="secPic3_sta" id = "picdataPic2_3_2"></h1> 
+
+									<h6 class="secPic4_num" id = "picdataPic2_4_1"></h6> 
+									<h1 class="secPic4_sta" id = "picdataPic2_4_2"></h1> 
+
+									<h6 class="secPic5_num" id = "picdataPic2_5_1"></h6>
+									<h1 class="secPic5_sta" id = "picdataPic2_5_2"></h1>  
+  
+									<h6 class="secPic6_num" id = "picdataPic2_6_1"></h6> 
+									<h1 class="secPic6_sta" id = "picdataPic2_6_2"></h1> 
+
+									<h6 class="secPic7_num" id = "picdataPic2_7_1"></h6> 
+									<h1 class="secPic7_sta" id = "picdataPic2_7_2"></h1> 
+
+									<h6 class="secPic8_num" id = "picdataPic2_8_1"></h6> 
+									<h1 class="secPic8_sta" id = "picdataPic2_8_2"></h1> 
+
+									<h6 class="secPic9_num" id = "picdataPic2_9_1"></h6> 
+									<h1 class="firPic9_sta" id = "picdataPic2_9_2"></h1> 
+
+									<h6 class="secPic10_num" id = "picdataPic2_10_1"></h6> 
+									<h1 class="secPic10_sta" id = "picdataPic2_10_2"></h1> 
+
+								
+								</div>
+							</div>
+							<div class="col-md-1" >
+								<div>
+								
+								</div>
+							</div>
+							<div class="col-md-3">
+								<table class="table table-hover" style="text-align: center;">
+									<thead>
+										<tr>										
+											<th> 編號</th>
+											<th> 進度狀態</th>
+											<th> 備註</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>						
+											<td id = "dataPic2_1_1"></td>
+											<td id = "dataPic2_1_2"></td>
+											<td id = "dataPic2_1_3"></td>
+										</tr>
+										<tr >
+											<td id = "dataPic2_2_1"></td>
+											<td id = "dataPic2_2_2"></td>	
+											<td id = "dataPic2_2_3"></td>
+										</tr>
+										<tr>									
+											<td id = "dataPic2_3_1"></td>
+											<td id = "dataPic2_3_2"></td>
+											<td id = "dataPic2_3_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic2_4_1"></td>
+											<td id = "dataPic2_4_2"></td>
+											<td id = "dataPic2_4_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic2_5_1"></td>
+											<td id = "dataPic2_5_2"></td>
+											<td id = "dataPic2_5_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic2_6_1"></td>
+											<td id = "dataPic2_6_2"></td>
+											<td	id = "dataPic2_6_3"></td>
+										</tr>
+										<tr>
+											<td	id = "dataPic2_7_1"></td>
+											<td id = "dataPic2_7_2"></td>
+											<td id = "dataPic2_7_3"></td>
+										</tr>
+					
+										<tr>
+											<td id = "dataPic2_8_1"></td>
+											<td id = "dataPic2_8_2"></td>
+											<td id = "dataPic2_8_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic2_9_1"></td>
+											<td id = "dataPic2_9_2"></td>
+											<td id = "dataPic2_9_3"></td>
+										</tr>
+										<tr>									
+											<td id = "dataPic2_10_1"></td>
+											<td id = "dataPic2_10_2"></td>
+											<td id = "dataPic2_10_3"></td>
+										</tr>
+					
+									</tbody>
+								</table>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+	
+<!--圖片三-->
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
+							1AEL-2N3F 01-08  二航北2N 3F
+						</h3>
+						<div class="row">
+							<div class="col-md-2" style="background-color: rgb(167, 247, 239);">
+								<div>
+								
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="ex1">
+									<img alt="1AEL-2N3F 01-06"  src="../imageprocessing/1AEL-2N3F.png"  style="border:2px   #ccc solid;padding:1px;"width="1400px",height="900px">
+									<h6 class="thrPic1_num" id = "picdataPic3_1_1" > </h6>
+									<h1 class="thrPic1_sta" id = "picdataPic3_1_2"></h1>
+
+									<h6 class="thrPic2_num" id = "picdataPic3_2_1"></h6>
+									<h1 class="thrPic2_sta" id = "picdataPic3_2_2"></h1>
+									
+									<h6 class="thrPic3_num" id = "picdataPic3_3_1"></h6> 
+									<h1 class="thrPic3_sta" id = "picdataPic3_3_2"></h1> 
+
+									<h6 class="thrPic4_num" id = "picdataPic3_4_1"></h6> 
+									<h1 class="thrPic4_sta" id = "picdataPic3_4_2"></h1> 
+
+									<h6 class="thrPic5_num" id = "picdataPic3_5_1"></h6>
+									<h1 class="thrPic5_sta" id = "picdataPic3_5_2"></h1>  
+  
+									<h6 class="thrPic6_num" id = "picdataPic3_6_1"></h6> 
+									<h1 class="thrPic6_sta" id = "picdataPic3_6_2"></h1> 
+
+									<h6 class="thrPic7_num" id = "picdataPic3_7_1"></h6> 
+									<h1 class="thrPic7_sta" id = "picdataPic3_7_2"></h1> 
+
+									<h6 class="thrPic8_num" id = "picdataPic3_8_1"></h6> 
+									<h1 class="thrPic8_sta" id = "picdataPic3_8_2"></h1> 
+
+									<h6 class="thrPic9_num" id = "picdataPic3_9_1"></h6> 
+									<h1 class="thrPic9_sta" id = "picdataPic3_9_2"></h1> 
+
+									<h6 class="thrPic10_num" id = "picdataPic3_10_1"></h6> 
+									<h1 class="thrPic10_sta" id = "picdataPic3_10_2"></h1> 
+
+
+								</div>
+							</div>
+							<div class="col-md-1" >
+								<div>
+								
+								</div>
+							</div>
+							<div class="col-md-3">
+								<table class="table table-hover" style="text-align: center;">
+									<thead>
+										<tr>
+											<th>編號</th>
+											<th>進度狀態</th>
+											<th>備註</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td id = "dataPic3_1_1"></td>
+											<td id = "dataPic3_1_2"></td>
+											<td id = "dataPic3_1_3"></td>
+										</tr>
+										<tr >
+											<td id = "dataPic3_2_1"></td>
+											<td id = "dataPic3_2_2"></td>	
+											<td id = "dataPic3_2_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic3_3_1"></td>
+											<td	id = "dataPic3_3_2"></td>
+											<td id = "dataPic3_3_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic3_4_1"></td>
+											<td id = "dataPic3_4_2"></td>
+											<td id = "dataPic3_4_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic3_5_1"></td>
+											<td id = "dataPic3_5_2"></td>
+											<td id = "dataPic3_5_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic3_6_1"></td>
+											<td id = "dataPic3_6_2"></td>
+											<td id = "dataPic3_6_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic3_7_1"></td>
+											<td id = "dataPic3_7_2"></td>
+											<td id = "dataPic3_7_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic3_8_1"></td>
+											<td id = "dataPic3_8_2"></td>
+											<td id = "dataPic3_8_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic3_9_1"></td>
+											<td id = "dataPic3_9_2"></td>
+											<td id = "dataPic3_9_3"></td>
+										</tr>
+										<tr>
+											<td id = "dataPic3_10_1"></td>
+											<td id = "dataPic3_10_2"></td>
+											<td id = "dataPic3_10_3"></td>
+										</tr>
+										
+									</tbody>
+								</table>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+  </body>
+</html>

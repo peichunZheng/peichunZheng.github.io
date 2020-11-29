@@ -1,0 +1,459 @@
+<!-- for迴圈版 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>桃園機場工程進度管理</title>
+	<script src="./js/jquery-3.5.1.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/scripts.js"></script>
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+	
+
+	
+		<script>
+
+			var allData = {};
+			var lastRow = 0;
+			var lastColumn = 0;
+			getAllData();
+
+			function getAllData() {
+			var parameter = {
+				// url: 'https://docs.google.com/spreadsheets/d/12TeUZwu_ZsWZmwfT6s2EKYeo2tPuNQIWtExbyQQJ9gg/edit#gid=0',
+				url:'https://docs.google.com/spreadsheets/d/1Z5_P_4Ydb0_fxV2igGFIghGpVXjElki0dh_RWyYMpDc/edit#gid=0',
+				name: '一航主體1T',
+				startRow: 1,
+				startColumn: 1
+			};
+			
+			$.get('https://script.google.com/macros/s/AKfycbyTlg1W_YBt5aOQimIcIjtd_U72QfWgF2jBdnAa0jXsoRUGt_D8/exec', parameter, function(data) {
+				console.log(data);
+				if(!data){
+					allData = {};
+				}else{
+					allData = data.split(',');
+					lastRow = allData[0];
+					lastColumn = allData[1];
+				}
+				console.log(allData);
+				console.log(lastRow);
+				console.log(lastColumn);
+
+				
+					for(i = 1; i < 4 ;i++){
+						//pic1  編號
+						//      狀態
+						//		備註 
+						setData(document.getElementById('dataPic1_'+i+'_1'), (i+1) , 2);
+						setData(document.getElementById('dataPic1_'+i+'_2'), (i+1) , 3);
+						setData(document.getElementById('dataPic1_'+i+'_3'), (i+1) , 4);
+						}
+					for(i = 1; i < 7 ;i++){
+						//pic1  編號
+						//      狀態
+						//		備註 
+						setData(document.getElementById('dataPic2_'+i+'_1'), (i+1)+3 , 2);
+						setData(document.getElementById('dataPic2_'+i+'_2'), (i+1)+3 , 3);
+						setData(document.getElementById('dataPic2_'+i+'_3'), (i+1)+3 , 4);
+						}
+
+				
+				
+				
+					for(i = 1; i < 4 ;i++){
+						//pic1  編號
+						//      狀態
+						//		備註 
+						picData(document.getElementById('picdataPic1_'+i+'_1'), (i+1) , 2);
+						picData(document.getElementById('picdataPic1_'+i+'_2'), (i+1) , 3);
+						$("h1:contains(準備中)").css("background-color","yellow" );
+						$("h1:contains(施工中)").css("background-color","green" );
+						}
+
+
+					for(i = 1; i < 7 ;i++){
+						//pic1  編號
+						//      狀態
+						//		備註 
+						picData(document.getElementById('picdataPic2_'+i+'_1'), (i+1)+3 , 2);
+						picData(document.getElementById('picdataPic2_'+i+'_2'), (i+1)+3 , 3);
+						$("h1:contains(準備中)").css("background-color","yellow" );
+						$("h1:contains(施工中)").css("background-color","green" );
+						}
+			});
+			}
+
+			function setData(aId, aRow, aColumn) {
+				console.log('setData');
+				
+					if(allData && aRow <= lastRow && aColumn <= lastColumn) {
+						aId.innerHTML = allData[(aRow-1)*lastColumn+(aColumn-1)+2];
+					}
+
+			}
+
+
+			function picData(aId, aRow, aColumn) {
+				console.log('picData');
+				
+					if(allData && aRow <= lastRow && aColumn <= lastColumn) {
+						aId.innerHTML = allData[(aRow-1)*lastColumn+(aColumn-1)+2];
+					}
+			}
+		</script>
+
+	 <style>
+		* {margin: 0px;
+		padding: 10px;
+		
+		}
+		.text_color{
+			color: firebrick;
+		}
+		.firPic1_num { 
+            position: absolute; 
+			
+            top: 330px; 
+            left: 80px; 
+			/* background-color: #3fd8114f */
+			/* text-align: center */
+			
+			border-radius: 15px;
+			background: #f3ce5e86;
+  			/* animation: 2s counterclockwise infinite; */
+        } 
+		.firPic1_sta { 
+            position: absolute; 
+            top: 370px; 
+            left: 80px; 
+			border-radius: 15px;
+			background: #f3ce5e44;
+			/* background: #80ced6 */
+
+        } 
+		.firPic2_num { 
+            position: absolute; 
+			top: 330px; 
+            left: 280px; 
+			border-radius: 15px;
+			background-color: #80ced6
+			
+        } 
+		.firPic2_sta { 
+            position: absolute; 
+            top: 370px; 
+            left: 280px; 
+			border-radius: 15px;
+
+			background-color: #80cdd646
+        } 
+		.firPic3_num { 
+            position: absolute; 
+			top: 330px; 
+            left: 500px;
+			border-radius: 15px;
+			
+			background-color: #80ced6
+        }
+		.firPic3_sta { 
+            position: absolute; 
+            top: 370px; 
+            left: 500px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }  
+		
+		/* <!--圖片2的css--> */
+
+		.secPic1_num { 
+            position: absolute; 
+			top: 150px; 
+            left: 400px; 	
+			border-radius: 15px;
+			background: #F3CE5E;
+        } 
+		.secPic1_sta { 
+            position: absolute; 
+            top: 190px; 
+            left: 400px; 
+			border-radius: 15px;
+			background: #F3CE5E;
+			/* background: #80ced6 */
+
+        } 
+		.secPic2_num { 
+            position: absolute; 
+			top: 290px; 
+            left: 400px; 
+			border-radius: 15px;
+			background-color: #80ced6
+			
+        } 
+		.secPic2_sta { 
+            position: absolute; 
+            top:330px; 
+            left: 400px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic3_num { 
+            position: absolute; 
+			top: 440px; 
+            left: 400px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+		.secPic3_sta { 
+            position: absolute; 
+            top: 480px; 
+            left: 400px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }  
+		.secPic4_num { 
+            position: absolute; 
+            top: 150px; 
+            left: 150px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic4_sta { 
+            position: absolute; 
+            top: 190px; 
+            left: 150px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic5_num { 
+            position: absolute; 
+            top: 290px; 
+            left: 150px; 
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic5_sta { 
+            position: absolute; 
+            top: 330px; 
+            left: 150px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic6_num { 
+            position: absolute; 
+            top: 440px; 
+            left: 150px;
+			border-radius: 15px;
+			background-color: #80ced6
+        } 
+		.secPic6_sta { 
+            position: absolute; 
+            top: 480px; 
+            left: 150px;
+			border-radius: 15px;
+			background-color: #80ced6
+        }
+
+	</style> 
+
+
+  </head>
+  <body>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="text-center"   font-size: 400px>
+				第一、二航廈照明及設備改善工程
+			</h2>
+			<p class="text-center" >
+				工程進度、追蹤
+			</p> 
+		</div>
+	</div>
+
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link active" href="http://www.ntu.edu.tw"> 一航北1N 2F 3F RF</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://yahoo.com">一航南1S 2F 3F RF</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">一航主體1T2F B</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">二航北2N 1F 2F 3F</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">二航南2S 1F 2F 3F</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">二航主體2T06 7-11 B </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="http://apple.com">二航主體2T1F 2F 3F RF </a>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+<!--圖片一-->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
+							1AEL-1TB 01-06  一航主體1TB
+						</h3>
+						<div class="row">
+							<div class="col-md-2" style="background-color: rgb(167, 247, 239, 0.3);">
+								<div>
+								
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="ex1">
+									<img alt="1AEL-1TB 01-06"  src="../imageprocessing/1AEL-1TB.png"  style="border:2px   #ccc solid;padding:1px;">
+									<h6 class="firPic1_num" id = "picdataPic1_1_1" > </h6>
+									<h1 class="firPic1_sta" id = "picdataPic1_1_2"></h1>
+
+									<h6 class="firPic2_num" id = "picdataPic1_2_1"></h6>
+									<h1 class="firPic2_sta" id = "picdataPic1_2_2"></h1>
+									
+									<h6 class="firPic3_num" id = "picdataPic1_3_1"></h6> 
+									<h1 class="firPic3_sta" id = "picdataPic1_3_2"></h1> 								
+								</div>
+							</div>
+							<div class="col-md-4">
+								<table class="table table-hover" style="text-align: center;" >
+									<thead>
+										<tr>
+										
+											<th>編號</th>
+											<th>進度狀態</th>
+											<th>備註</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td id = "dataPic1_1_1" ></td>
+											<td id = "dataPic1_1_2"></td>
+											<td id = "dataPic1_1_3"></td>
+										</tr>
+										<tr >
+											<td id = "dataPic1_2_1"></td>
+											<td id = "dataPic1_2_2"></td>	
+											<td	id = "dataPic1_2_3" ></td>
+										</tr>
+										<tr>											
+											<td id = "dataPic1_3_1"></td>
+											<td	id = "dataPic1_3_2"></td>
+											<td id = "dataPic1_3_3"></td>
+										</tr>
+									</tbody>
+								</table>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<!--圖片二-->
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
+							1AEL-1T2F 01-06  一航主體1T 2F 
+						</h3>
+						<div class="row">
+							<div class="col-md-2" style="background-color: rgb(167, 247, 239);">
+								<div>
+								
+								</div>
+							</div>
+							<div class="col-md-5">
+								<div class="ex1">
+									<img alt="1AEL-1T2F 01-06"  src="../imageprocessing/1AEL-1T2F.png"  style="border:2px    #ccc solid;padding:1px;">
+									<h6 class="secPic1_num" id = "picdataPic2_1_1" > </h6>
+									<h1 class="secPic1_sta" id = "picdataPic2_1_2"></h1>
+
+									<h6 class="secPic2_num" id = "picdataPic2_2_1"></h6>
+									<h1 class="secPic2_sta" id = "picdataPic2_2_2"></h1>
+									
+									<h6 class="secPic3_num" id = "picdataPic2_3_1"></h6> 
+									<h1 class="secPic3_sta" id = "picdataPic2_3_2"></h1> 
+
+									<h6 class="secPic4_num" id = "picdataPic2_4_1"></h6> 
+									<h1 class="secPic4_sta" id = "picdataPic2_4_2"></h1> 
+
+									<h6 class="secPic5_num" id = "picdataPic2_5_1"></h6>
+									<h1 class="secPic5_sta" id = "picdataPic2_5_2"></h1>  
+  
+									<h6 class="secPic6_num" id = "picdataPic2_6_1"></h6> 
+									<h1 class="secPic6_sta" id = "picdataPic2_6_2"></h1> 
+								
+								</div>
+							</div>
+							<div class="col-md-4">
+								<table class="table table-hover" style="text-align: center;">
+									<thead>
+										<tr>										
+											<th> 編號</th>
+											<th> 進度狀態</th>
+											<th> 備註</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>						
+											<td id = "dataPic2_1_1"></td>
+											<td id = "dataPic2_1_2"></td>
+											<td id = "dataPic2_1_3"></td>
+										</tr>
+										<tr >
+											<td id = "dataPic2_2_1"></td>
+											<td id = "dataPic2_2_2"> </td>	
+											<td id = "dataPic2_2_3"></td>
+										</tr>
+										<tr>									
+											<td id = "dataPic2_3_1"></td>
+											<td id = "dataPic2_3_2"></td>
+											<td id = "dataPic2_3_3"></td>
+										</tr>
+										<tr>
+											<td	id = "dataPic2_4_1"></td>											
+											<td id = "dataPic2_4_2"></td>
+											<td id = "dataPic2_4_3"></td>
+										</tr>
+										<tr>
+											<td	id = "dataPic2_5_1"></td>
+											<td	id = "dataPic2_5_2"></td>
+											<td id = "dataPic2_5_3"></td>
+										</tr>
+										<tr>
+											<td	id = "dataPic2_6_1"></td>
+											<td	id = "dataPic2_6_2"></td>
+											<td id = "dataPic2_6_3"></td>
+										</tr>	
+									</tbody>
+								</table>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+
+  </body>
+</html>

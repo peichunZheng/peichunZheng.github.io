@@ -13,9 +13,7 @@
 	<script src="./js/scripts.js"></script>
 	<link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
-	
-
-	
+		
 		<script>
 
 			var allData = {};
@@ -54,7 +52,6 @@
 						setData(document.getElementById('dataPic'+j+'_'+i+'_2'), (i+1)+6*(j-1) , 3);
 						setData(document.getElementById('dataPic'+j+'_'+i+'_3'), (i+1)+6*(j-1) , 4);
 						}
-
 				}
 				
 				for(j = 1; j < 4; j++){
@@ -62,21 +59,18 @@
 						//pic1  編號
 						//      狀態
 						//		備註 
-						
 						picData(document.getElementById('picdataPic'+j+'_'+i+'_1'), (i+1)+6*(j-1) , 2);
 						picData(document.getElementById('picdataPic'+j+'_'+i+'_2'), (i+1)+6*(j-1) , 3);
 						// $("p:contains(準備中)").css("color" ,"red");
 						// $("h6:contains(準備中)").css({"color":"red","font-size":"200%"});
-						$("h1:contains(準備中)").css("background-color","yellow" );
-						$("h1:contains(施工中)").css("background-color","green" );
-
+						$("h6:contains(準備中)").css("background-color","yellow" );
+						$("h6:contains(施工中)").css("background-color","green" );
 						// setData(document.getElementById('picdataPic'+j+'_'+i+'_3'), (i+1)+6*(j-1) , 4);
 						}
 				}								
 
 			});
 			}
-
 			function setData(aId, aRow, aColumn) {
 				console.log('setData');
 					if(allData && aRow <= lastRow && aColumn <= lastColumn) {
@@ -99,282 +93,204 @@
 		</script>
 
 	 <style>
-		*{	margin: 0px;
+		/* *{	margin: 0px;
 			padding: 10px;
 		
-		}
+		} */
 		.text_color{
 			color: firebrick;
 		}
 		.firPic1_num { 
             position: absolute; 
-            top: 150px; 
+            top: 90px; 
             left: 50px; 
 			/* background-color: #3fd8114f */
 			/* text-align: center */
-			border-radius: 15px;
-			background: #F3CE5E;
-  			/* animation: 2s counterclockwise infinite; */
+			/* animation: 2s counterclockwise infinite; */
         } 
 		.firPic1_sta { 
             position: absolute; 
-            top: 190px; 
-            left: 50px; 
-			border-radius: 15px;
-			background: #F3CE5E;
+            top: 120px; 
+            left: 40px; 
 			/* background: #80ced6 */
-
         } 
 		.firPic2_num { 
             position: absolute; 
-			top: 150px; 
-            left: 580px; 
-			border-radius: 15px;
-			background-color: #80ced6
+			top: 90px; 
+            left: 250px; 
 			
         } 
 		.firPic2_sta { 
             position: absolute; 
-            top: 190px; 
-            left: 580px; 
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 120px; 
+            left: 240px; 
         } 
 		.firPic3_num { 
             position: absolute; 
-			top: 340px; 
+			top: 180px; 
             left: 50px;
-			border-radius: 15px;
-			background-color: #80ced6
         }
 		.firPic3_sta { 
             position: absolute; 
-            top: 380px; 
-            left: 50px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 210px; 
+            left: 40px;
         }  
 		.firPic4_num { 
             position: absolute; 
-            top: 340px; 
-            left: 220px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 180px; 
+            left: 110px;
         } 
 		.firPic4_sta { 
             position: absolute; 
-            top: 380Px; 
-            left: 220px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 210Px; 
+            left: 100px;
         } 
 		.firPic5_num { 
             position: absolute; 
-            top: 340px; 
-            left: 400px; 
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 180px; 
+            left: 180px; 
         } 
 		.firPic5_sta { 
             position: absolute; 
-            top: 380px; 
-            left: 400px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 210px; 
+            left: 170px;
         } 
 		.firPic6_num { 
             position: absolute; 
-            top: 340px; 
-            left: 580px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 180px; 
+            left: 240px;
         } 
 		.firPic6_sta { 
             position: absolute; 
-            top: 380px; 
-            left: 580px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 210px; 
+            left: 240px;
         }
 		
 		/* <!--圖片2的css--> */
 
 		.secPic1_num { 
             position: absolute; 
-			top: 550px; 
-            left: 400px; 	
-			border-radius: 15px;
-			background: #F3CE5E;
+			top: 230px; 
+            left: 140px; 
         } 
 		.secPic1_sta { 
             position: absolute; 
-            top: 590px; 
-            left: 400px; 
-			border-radius: 15px;
-			background: #F3CE5E;
+            top: 260px; 
+            left: 140px; 
         } 
 		.secPic2_num { 
             position: absolute; 
-			top: 240px; 
-            left: 150px; 
-			border-radius: 15px;
-			background-color: #80ced6
+			top: 110px; 
+            left: 50px; 
         } 
 		.secPic2_sta { 
             position: absolute; 
-            top: 280px; 
-            left: 150px; 
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 140px; 
+            left: 50px; 
         } 
 		.secPic3_num { 
             position: absolute; 
-			top: 350px; 
-            left: 400px;
-			border-radius: 15px;
-			background-color: #80ced6
+			top: 160px; 
+            left: 140px;
         }
 		.secPic3_sta { 
             position: absolute; 
-            top: 390px; 
-            left: 400px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 190px; 
+            left: 140px;
         }  
 		.secPic4_num { 
             position: absolute; 
-            top: 240px; 
-            left: 650px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 110px; 
+            left: 230px;
         } 
 		.secPic4_sta { 
             position: absolute; 
-            top: 280px; 
-            left: 650px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 140px; 
+            left: 230px;
         } 
 		.secPic5_num { 
             position: absolute; 
-            top: 100px; 
-            left: 300px; 
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 50px; 
+            left: 110px; 
         } 
 		.secPic5_sta { 
             position: absolute; 
-            top: 140px; 
-            left: 300px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 80px; 
+            left: 100px;
         } 
 		
 		.secPic6_num { 
             position: absolute; 
-            top: 100px; 
-            left: 500px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 50px; 
+            left: 190px;
         } 
 		.secPic6_sta { 
             position: absolute; 
-            top: 140px; 
-            left: 500px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 80px; 
+            left: 180px;
         }
 		
 		/* <!--圖片3的css--> */
 		.thrPic1_num { 
             position: absolute; 
-			top: 300px; 
-            left: 100px; 	
-			border-radius: 15px;
-			background: #F3CE5E;
+			top: 130px; 
+            left: 30px; 	
         } 
 		.thrPic1_sta { 
             position: absolute; 
-            top: 340px; 
-            left: 100px; 
-			border-radius: 15px;
-			background: #F3CE5E;
+            top: 160px; 
+            left: 30px; 
 			/* background: #80ced6 */
-
         } 
 		.thrPic2_num { 
             position: absolute; 
-			top: 300px; 
-            left: 650px; 
-			border-radius: 15px;
-			background-color: #80ced6
-			
+			top: 130px; 
+            left: 250px; 
         } 
 		.thrPic2_sta { 
             position: absolute; 
-            top: 340px; 
-            left: 650px; 
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 160px; 
+            left: 250px; 
         } 
 		.thrPic3_num { 
             position: absolute; 
-			top: 100px; 
-            left: 200px;
-			border-radius: 15px;
-			background-color: #80ced6
+			top: 50px; 
+            left: 100px;
         }
 		.thrPic3_sta { 
             position: absolute; 
-            top: 140px; 
-            left: 200px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 80px; 
+            left: 100px;
         }  
 		.thrPic4_num { 
             position: absolute; 
-            top: 100px; 
-            left: 650px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 50px; 
+            left: 190px;
         } 
 		.thrPic4_sta { 
             position: absolute; 
-            top: 140px; 
-            left: 650px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 80px; 
+            left: 190px;
         } 
 		.thrPic5_num { 
             position: absolute; 
-            top: 440px; 
-            left: 300px; 
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 190px; 
+            left: 105px; 
         } 
 		.thrPic5_sta { 
             position: absolute; 
-            top: 480px; 
-            left: 300px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 220px; 
+            left: 105px;
         } 
 		.thrPic6_num { 
             position: absolute; 
-            top: 440px; 
-            left: 500px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 190px; 
+            left: 180px;
         } 
 		.thrPic6_sta { 
             position: absolute; 
-            top: 480px; 
-            left: 500px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 220px; 
+            left: 180px;
         }
 		
 	</style> 
@@ -384,12 +300,10 @@
     <meta name="author" content="LayoutIt!">
 	-->
 
-
-
   </head>
   <body>
 
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-12">
 			<h2 class="text-center"   font-size: 400px>
 				第一、二航廈照明及設備改善工程
@@ -398,33 +312,54 @@
 				工程進度、追蹤
 			</p> 
 		</div>
+	</div> -->
+
+
+	<div class="row">
+		<div class="col-md-12" class="text-center" >
+			<div  class="test">第一、二航廈照明及設備改善工程</div>
+			<p class="text-center" >工程進度、追蹤</p> 
+		</div>
 	</div>
 
+	<div class="row">
+		<div class="col-md-12" class="text-center" >
+			<div class="box">
+				<div class="overline"></div>
+				<div class="faith">XIN,</div>
+				<div class="hope">LIAN,</div>
+				<div class="love">YE</div>
+				<div class="underline"></div>
+			  </div>
+			
+		</div>
+	</div>
+	
 
 
 	<div class="row">
 		<div class="col-md-12">
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
-					<a class="nav-link active" href="http://www.ntu.edu.tw"> 一航北1N 2F 3F RF</a>
+					<a class="nav-link active" href="./1N.html"> 一航北1N 2F 3F RF</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="http://yahoo.com">一航南1S 2F 3F RF</a>
+					<a class="nav-link" href="./1S.html">一航南1S 2F 3F RF</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">一航主體1T2F B</a>
+					<a class="nav-link " href="./1T.html">一航 主體 1T 2F BF</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">二航北2N 1F 2F 3F</a>
+					<a class="nav-link " href="./index.html">二航北2N 1F 2F 3F</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">二航南2S 1F 2F 3F</a>
+					<a class="nav-link " href="./2S.html">二航南 2S 1F 2F 3F</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">二航主體2T06 7-11 B </a>
+					<a class="nav-link " href="./2T.html">二航主體2T06 7-11 BF </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">二航主體2T1F 2F 3F RF </a>
+					<a class="nav-link " href="./2TT.html">二航主體2T1F 2F 3F RF </a>
 				</li>
 				
 			</ul>
@@ -435,35 +370,34 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
-							1AEL-2T BF 03 06-10  二航主體  BF 
+						<h3  >
+							1AEL-2T BF 03 06-10 
+						</h3>
+						<h3  >
+							 二航主體  BF 
 						</h3>
 						<div class="row">
-							<div class="col-md-2" style="background-color: rgb(167, 247, 239, 0.3);">
-								<div>
-								
-								</div>
-							</div>
+							
 							<div class="col-md-5">
 								<div class="ex1">
-									<img alt="1AEL-2T_B.png 01-06"  src="../imageprocessing/1AEL-2T_B.png"  style="border:2px   #ccc solid;padding:1px;">
+									<img alt="1AEL-2T_B.png 01-06"  src="../imageprocessing/1AEL-2T_B.png"  width="300px"  height="300px"  style="border:2px   #ccc solid;padding:1px;">
 									<h6 class="firPic1_num" id = "picdataPic1_1_1" > </h6>
-									<h1 class="firPic1_sta" id = "picdataPic1_1_2"></h1>
+									<h6 class="firPic1_sta" id = "picdataPic1_1_2"></h6>
 
 									<h6 class="firPic2_num" id = "picdataPic1_2_1"></h6>
-									<h1 class="firPic2_sta" id = "picdataPic1_2_2"></h1>
+									<h6 class="firPic2_sta" id = "picdataPic1_2_2"></h6>
 									
 									<h6 class="firPic3_num" id = "picdataPic1_3_1"></h6> 
-									<h1 class="firPic3_sta" id = "picdataPic1_3_2"></h1> 
+									<h6 class="firPic3_sta" id = "picdataPic1_3_2"></h6> 
 
 									<h6 class="firPic4_num" id = "picdataPic1_4_1"></h6> 
-									<h1 class="firPic4_sta" id = "picdataPic1_4_2"></h1> 
+									<h6 class="firPic4_sta" id = "picdataPic1_4_2"></h6> 
 
 									<h6 class="firPic5_num" id = "picdataPic1_5_1"></h6>
-									<h1 class="firPic5_sta" id = "picdataPic1_5_2"></h1>  
+									<h6 class="firPic5_sta" id = "picdataPic1_5_2"></h6>  
   
 									<h6 class="firPic6_num" id = "picdataPic1_6_1"></h6> 
-									<h1 class="firPic6_sta" id = "picdataPic1_6_2"></h1> 
+									<h6 class="firPic6_sta" id = "picdataPic1_6_2"></h6> 
 									
 								</div>
 							</div>
@@ -522,35 +456,34 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
-							1AEL-2T 0001-0004  二航主體 2T  
+						<h3>
+							1AEL-2T 0001-0004
+						</h3>
+						<h3>
+							二航主體 2T  
 						</h3>
 						<div class="row">
-							<div class="col-md-2" style="background-color: rgb(167, 247, 239);">
-								<div>
-								
-								</div>
-							</div>
+							
 							<div class="col-md-5">
 								<div class="ex1">
-									<img alt="1AEL-2T_1 0001-0004"  src="../imageprocessing/1AEL-2T_1.png" style="border:2px    #ccc solid;padding:1px;">
+									<img alt="1AEL-2T_1 0001-0004"  src="../imageprocessing/1AEL-2T_1.png"  width="300px"  height="300px" style="border:2px    #ccc solid;padding:1px;">
 									<h6 class="secPic1_num" id = "picdataPic2_1_1" > </h6>
-									<h1 class="secPic1_sta" id = "picdataPic2_1_2"></h1>
+									<h6 class="secPic1_sta" id = "picdataPic2_1_2"></h6>
 
 									<h6 class="secPic2_num" id = "picdataPic2_2_1"></h6>
-									<h1 class="secPic2_sta" id = "picdataPic2_2_2"></h1>
+									<h6 class="secPic2_sta" id = "picdataPic2_2_2"></h6>
 									
 									<h6 class="secPic3_num" id = "picdataPic2_3_1"></h6> 
-									<h1 class="secPic3_sta" id = "picdataPic2_3_2"></h1> 
+									<h6 class="secPic3_sta" id = "picdataPic2_3_2"></h6> 
 
 									<h6 class="secPic4_num" id = "picdataPic2_4_1"></h6> 
-									<h1 class="secPic4_sta" id = "picdataPic2_4_2"></h1> 
+									<h6 class="secPic4_sta" id = "picdataPic2_4_2"></h6> 
 
 									<h6 class="secPic5_num" id = "picdataPic2_5_1"></h6>
-									<h1 class="secPic5_sta" id = "picdataPic2_5_2"></h1>  
+									<h6 class="secPic5_sta" id = "picdataPic2_5_2"></h6>  
   
 									<h6 class="secPic6_num" id = "picdataPic2_6_1"></h6> 
-									<h1 class="secPic6_sta" id = "picdataPic2_6_2"></h1> 
+									<h6 class="secPic6_sta" id = "picdataPic2_6_2"></h6> 
 
 								</div>
 							</div>
@@ -609,35 +542,30 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
-							1AEL-2T 0011-0014  二航主體2T 
-						</h3>
+						<h3>1AEL-2T 0011-0014 </h3>
+						<h3>二航主體2T</h3>
 						<div class="row">
-							<div class="col-md-2" style="background-color: rgb(167, 247, 239);">
-								<div>
-								
-								</div>
-							</div>
+							
 							<div class="col-md-5">
 								<div class="ex1">
-									<img alt="1AEL-2T 0011-0014"  src="../imageprocessing/1AEL-2T_2.png"  style="border:2px   #ccc solid;padding:1px;">
-									<h6 class="thrPic1_num" id = "picdataPic3_1_1" > </h6>
-									<h1 class="thrPic1_sta" id = "picdataPic3_1_2"></h1>
+									<img alt="1AEL-2T 0011-0014"  src="../imageprocessing/1AEL-2T_2.png"  width="300px"  height="300px" style="border:2px   #ccc solid;padding:1px;">
+									<h6 class="thrPic1_num" id = "picdataPic3_1_1"></h6>
+									<h6 class="thrPic1_sta" id = "picdataPic3_1_2"></h6>
 
 									<h6 class="thrPic2_num" id = "picdataPic3_2_1"></h6>
-									<h1 class="thrPic2_sta" id = "picdataPic3_2_2"></h1>
+									<h6 class="thrPic2_sta" id = "picdataPic3_2_2"></h6>
 									
 									<h6 class="thrPic3_num" id = "picdataPic3_3_1"></h6> 
-									<h1 class="thrPic3_sta" id = "picdataPic3_3_2"></h1> 
+									<h6 class="thrPic3_sta" id = "picdataPic3_3_2"></h6> 
 
 									<h6 class="thrPic4_num" id = "picdataPic3_4_1"></h6> 
-									<h1 class="thrPic4_sta" id = "picdataPic3_4_2"></h1> 
+									<h6 class="thrPic4_sta" id = "picdataPic3_4_2"></h6> 
 
 									<h6 class="thrPic5_num" id = "picdataPic3_5_1"></h6>
-									<h1 class="thrPic5_sta" id = "picdataPic3_5_2"></h1>  
+									<h6 class="thrPic5_sta" id = "picdataPic3_5_2"></h6>  
   
 									<h6 class="thrPic6_num" id = "picdataPic3_6_1"></h6> 
-									<h1 class="thrPic6_sta" id = "picdataPic3_6_2"></h1> 
+									<h6 class="thrPic6_sta" id = "picdataPic3_6_2"></h6> 
 
 								</div>
 							</div>

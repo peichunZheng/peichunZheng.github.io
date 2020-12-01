@@ -25,7 +25,7 @@
 	
 
 	<link href="./css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="./css/style.css" rel="stylesheet"> -->
+    <link href="./css/style.css" rel="stylesheet"> 
 		
 		<script>
 
@@ -98,8 +98,8 @@
 						//		備註 
 						picData(document.getElementById('picdataPic1_'+i+'_1'), (i+1) , 2);
 						picData(document.getElementById('picdataPic1_'+i+'_2'), (i+1) , 3);
-						$("h2:contains(準備中)").css("background-color","yellow" );
-						$("h2:contains(施工中)").css("background-color","green" );
+						$("h6:contains(準備中)").css("background-color","yellow" );
+						$("h6:contains(施工中)").css("background-color","green" );
 						}
 				for(i = 1; i < 8 ;i++){
 						//pic1  編號
@@ -107,8 +107,8 @@
 						//		備註 
 						picData(document.getElementById('picdataPic2_'+i+'_1'), (i+1)+5 , 2);
 						picData(document.getElementById('picdataPic2_'+i+'_2'), (i+1)+5 , 3);
-						$("h2:contains(準備中)").css("background-color","yellow" );
-						$("h2:contains(施工中)").css("background-color","green" );
+						$("h6:contains(準備中)").css("background-color","yellow" );
+						$("h6:contains(施工中)").css("background-color","green" );
 						}
 
 			
@@ -118,8 +118,8 @@
 						//		備註 
 						picData(document.getElementById('picdataPic3_'+i+'_1'), (i+1)+12 , 2);
 						picData(document.getElementById('picdataPic3_'+i+'_2'), (i+1)+12 , 3);
-						$("h2:contains(準備中)").css("background-color","yellow" );
-						$("h2:contains(施工中)").css("background-color","green" );
+						$("h6:contains(準備中)").css("background-color","yellow" );
+						$("h6:contains(施工中)").css("background-color","green" );
 						}
 
 					
@@ -129,8 +129,8 @@
 						//		備註 
 						picData(document.getElementById('picdataPic4_'+i+'_1'), (i+1)+18 , 2);
 						picData(document.getElementById('picdataPic4_'+i+'_2'), (i+1)+18 , 3);
-						$("h2:contains(準備中)").css("background-color","yellow" );
-						$("h2:contains(施工中)").css("background-color","green" );
+						$("h6:contains(準備中)").css("background-color","yellow" );
+						$("h6:contains(施工中)").css("background-color","green" );
 						}
 
 				
@@ -160,474 +160,246 @@
 		</script>
 
 	 <style>
-		 
+/*		 
 		* {margin: 0px;
 		padding: 10px;
 		}
-		
+		 */
 		.text_color{
 			color: firebrick;
 		}
 		.firPic1_num { 
             position: absolute; 
-            top: 50px; 
-            left: 500px; 
+            top: 15px; 
+			left: 180px; 
 			/* background-color: #3fd8114f */
 			/* text-align: center */
-			border-radius: 15px;
-			background: #F3CE5E;
-  			/* animation: 2s counterclockwise infinite; */
+			/* animation: 2s counterclockwise infinite; */
         } 
 		.firPic1_sta { 
             position: absolute; 
-            top: 90px; 
-            left: 500px; 
-			border-radius: 15px;
-			background: #F3CE5E;
-			/* background: #80ced6 */
+            top: 45px; 
+            left: 170px; 
         } 
 		.firPic2_num { 
             position: absolute; 
-			top: 200px; 
-            left: 250px; 
-			border-radius: 15px;
-			background-color: #80ced6
+			top: 80px; 
+            left: 110px; 
         } 
 		.firPic2_sta { 
             position: absolute; 
-            top: 240px; 
-            left: 250px; 
-			border-radius: 15px;
-
-			background-color: #80ced6
+            top: 110px; 
+            left: 100px; 
         } 
 		.firPic3_num { 
             position: absolute; 
-			top: 200px; 
-            left: 500px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+			top: 80px; 
+            left: 180px;
         }
 		.firPic3_sta { 
             position: absolute; 
-            top: 240px; 
-            left: 500px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 110px; 
+            left: 170px;
         }  
 		.firPic4_num { 
             position: absolute; 
-            top: 420px; 
-            left: 250px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 150px; 
+            left: 110px;
         } 
 		.firPic4_sta { 
             position: absolute; 
-            top: 460px; 
-            left: 250px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 180px; 
+            left: 100px;
         } 
 		.firPic5_num { 
             position: absolute; 
-            top: 420px; 
-            left: 500px; 
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 150px; 
+            left: 180px; 
         } 
 		.firPic5_sta { 
             position: absolute; 
-            top: 460px; 
-            left: 500px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 180px; 
+            left: 170px;
         } 
 	
 		/* <!--圖片2的css--> */
 
 		.secPic1_num { 
             position: absolute; 
-			top: 160px; 
-            left: 120px; 	
-			border-radius: 15px;
-			background: #F3CE5E;
+			top: 60px; 
+            left: 50px; 	
         } 
 		.secPic1_sta { 
             position: absolute; 
-            top: 200px; 
-            left: 120px; 
-			border-radius: 15px;
-			background: #F3CE5E;
-			/* background: #80ced6 */
-
+            top: 90px; 
+            left: 40px; 
         } 
 		.secPic2_num { 
             position: absolute; 
-			top: 160px; 
-            left: 300px; 
-			border-radius: 15px;
-			background-color: #80ced6
-			
+			top: 60px; 
+            left: 110px; 
         } 
 		.secPic2_sta { 
             position: absolute; 
-            top: 200px; 
-            left: 300px; 
-			border-radius: 15px;
-
-			background-color: #80ced6
+            top: 90px; 
+            left: 100px; 
         } 
 		.secPic3_num { 
             position: absolute; 
-			top: 160px; 
-            left: 500px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+			top: 60px; 
+            left: 180px;
         }
 		.secPic3_sta { 
             position: absolute; 
-            top: 200px; 
-            left: 500px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 90px; 
+            left: 170px;
         }  
 		.secPic4_num { 
             position: absolute; 
-            top: 160px; 
-            left: 680px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 60px; 
+            left: 250px;
         } 
 		.secPic4_sta { 
             position: absolute; 
-            top: 200px; 
-            left: 680px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 90px; 
+            left: 240px;
         } 
 		.secPic5_num { 
             position: absolute; 
-            top: 340px; 
-            left: 120px; 
-			border-radius: 15px;
-
-			background-color: #80ced6
+            top: 140px; 
+            left: 50px; 
         } 
 		.secPic5_sta { 
             position: absolute; 
-            top: 380px; 
-            left: 120px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 170px; 
+            left: 40px;
         } 
 		.secPic6_num { 
             position: absolute; 
-            top: 340px; 
-            left: 300px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 140px; 
+            left: 110px;
         } 
 		.secPic6_sta { 
             position: absolute; 
-            top: 380px; 
-            left: 300px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 170px; 
+            left: 100px;
         }
 		.secPic7_num { 
             position: absolute; 
-            top: 340px; 
-            left: 500px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 140px; 
+            left: 180px;
         } 
 		.secPic7_sta { 
             position: absolute; 
-            top: 380px; 
-            left: 500px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 170px; 
+            left: 170px;
         }
 
 		/* <!--圖片3的css--> */
 		.thrPic1_num { 
             position: absolute; 
-			top: 100px; 
-            left: 120px; 	
-			border-radius: 15px;
-			background: #F3CE5E;
+			top: 50px; 
+            left: 50px; 
         } 
 		.thrPic1_sta { 
             position: absolute; 
-            top: 140px; 
-            left: 120px; 
-			border-radius: 15px;
-			background: #F3CE5E;
-			/* background: #80ced6 */
+            top: 80px; 
+            left: 40px; 
 
         } 
 		.thrPic2_num { 
             position: absolute; 
-			top: 100px; 
-            left: 300px; 
-			border-radius: 15px;
-			background-color: #80ced6
-			
+			top: 50px; 
+            left: 120px; 
         } 
 		.thrPic2_sta { 
             position: absolute; 
-            top: 140px; 
-            left: 300px; 
-			border-radius: 15px;
-
-			background-color: #80ced6
+            top: 80px; 
+            left: 110px; 
         } 
 		.thrPic3_num { 
             position: absolute; 
-			top: 110px; 
-            left: 500px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+			top: 50px; 
+            left: 180px;
         }
 		.thrPic3_sta { 
             position: absolute; 
-            top: 150px; 
-            left: 500px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 80px; 
+            left: 170px;
         }  
 		.thrPic4_num { 
             position: absolute; 
-            top: 110px; 
-            left: 700px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 50px; 
+            left: 250px;
         } 
 		.thrPic4_sta { 
             position: absolute; 
-            top: 150px; 
-            left: 700px;
-			border-radius: 15px;
-			
-			background-color: #80ced6
+            top: 80px; 
+            left: 240px;
         } 
 		.thrPic5_num { 
             position: absolute; 
-            top: 300px; 
-            left: 300px; 
-			border-radius: 15px;
-
-			background-color: #80ced6
+            top: 130px; 
+            left: 110px; 
         } 
-		.thrPic5_sta { 
+		.thrPic5_sta {
             position: absolute; 
-            top: 340px; 
-            left: 300px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 160px; 
+            left: 100px;
         } 
 		.thrPic6_num { 
             position: absolute; 
-            top: 300px; 
-            left: 500px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 130px; 
+            left: 190px;
         } 
 		.thrPic6_sta { 
             position: absolute; 
-            top: 340px; 
-            left: 500px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 160px; 
+            left: 180px;
         }
 
 		/* <!--圖片4的css--> */
 		.fourPic1_num { 
             position: absolute; 
-			top: 150px; 
-            left: 250px; 	
-			border-radius: 15px;
-			background: #F3CE5E;
+			top: 70px; 
+            left: 110px; 	
         } 
 		.fourPic1_sta { 
             position: absolute; 
-            top: 190px; 
-            left: 250px; 
-			border-radius: 15px;
-			background: #F3CE5E;
+            top: 100px; 
+            left: 100px; 
         } 
 		.fourPic2_num { 
             position: absolute; 
-			top: 150px; 
-            left: 480px; 
-			border-radius: 15px;
-			background-color: #80ced6
+			top: 70px; 
+            left: 190px; 
         } 
 		.fourPic2_sta { 
             position: absolute; 
-            top: 190px; 
-            left: 480px; 
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 100px; 
+            left: 180px; 
         } 
 		.fourPic3_num { 
             position: absolute; 
-			top: 300px; 
-            left: 250px;
-			border-radius: 15px;
-			background-color: #80ced6
+			top: 160px; 
+            left: 110px;
         }
 		.fourPic3_sta { 
             position: absolute; 
-            top: 340px; 
-            left: 250px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 190px; 
+            left: 100px;
         }  
 		.fourPic4_num { 
             position: absolute; 
-            top: 300px; 
-            left: 480px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 160px; 
+            left: 190px;
         } 
 		.fourPic4_sta { 
             position: absolute; 
-            top: 340px; 
-            left: 480px;
-			border-radius: 15px;
-			background-color: #80ced6
+            top: 190px; 
+            left: 180px;
         } 
-		
 
-		div.test {
-			  display: flex;
-			  align-items: center;
-			  justify-content: center;
-			  position: relative;
-			  margin: 20px auto;
-			  width: 800px;
-			  height: 250px;
-			  background: white;
-			  border-radius: 75px;
-			  font-family: 'Montserrat', sans-serif;
-			  font-size: 50px;
-			  font-weight: lighter;
-			  letter-spacing: 2px;
-			  transition: 1s box-shadow;
-			}
-
-		div.test:hover {
-		  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
-		}
-
-		div.test:hover::before, div.test:hover::after {
-		  display: block;
-		  content: '';
-		  position: absolute;
-		  width: 800px;
-		  height: 250px;
-		  background: #FDA8CF;
-		  border-radius: 75px;
-		  z-index: -1;
-		  animation: 1s clockwise infinite;
-		}
-
-div.test:hover:after {
-  background: #F3CE5E;
-  animation: 2s counterclockwise infinite;
-}
-
-@keyframes clockwise {
-  0% {
-    top: -5px;
-    left: 0;
-  }
-  12% {
-    top: -2px;
-    left: 2px;
-  }
-  25% {
-    top: 0;
-    left: 5px;    
-  }
-  37% {
-    top: 2px;
-    left: 2px;
-  }
-  50% {
-    top: 5px;
-    left: 0;    
-  }
-  62% {
-    top: 2px;
-    left: -2px;
-  }
-  75% {
-    top: 0;
-    left: -5px;
-  }
-  87% {
-    top: -2px;
-    left: -2px;
-  }
-  100% {
-    top: -5px;
-    left: 0;    
-  }
-}
-
-@keyframes counterclockwise {
-  0% {
-    top: -5px;
-    right: 0;
-  }
-  12% {
-    top: -2px;
-    right: 2px;
-  }
-  25% {
-    top: 0;
-    right: 5px;    
-  }
-  37% {
-    top: 2px;
-    right: 2px;
-  }
-  50% {
-    top: 5px;
-    right: 0;    
-  }
-  62% {
-    top: 2px;
-    right: -2px;
-  }
-  75% {
-    top: 0;
-    right: -5px;
-  }
-  87% {
-    top: -2px;
-    right: -2px;
-  }
-  100% {
-    top: -5px;
-    right: 0;    
-  }
-}
 	
 	</style> 
   </head>
@@ -640,6 +412,19 @@ div.test:hover:after {
 			<p class="text-center">工程進度、追蹤</p> 
 		</div>
 	</div>	
+	
+	<div class="row">
+		<div class="col-md-12" class="text-center" >
+			<div class="box">
+				<div class="overline"></div>
+				<div class="faith">XIN,</div>
+				<div class="hope">LIAN,</div>
+				<div class="love">YE</div>
+				<div class="underline"></div>
+			  </div>
+			
+		</div>
+	</div>
 	<!-- <div style="background-color: khaki;">
 		<canvas class="illo"></canvas> </div>
 			
@@ -650,64 +435,66 @@ div.test:hover:after {
 		<div class="test">第一、二航廈照明及設備改善工程</div>
 	 -->
 
-	<div class="row">
+	 <div class="row">
 		<div class="col-md-12">
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
-					<a class="nav-link active" href="http://www.ntu.edu.tw"> 一航北1N 2F 3F RF</a>
+					<a class="nav-link active" href="./1N.html"> 一航北1N 2F 3F RF</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="http://yahoo.com">一航南1S 2F 3F RF</a>
+					<a class="nav-link" href="./1S.html">一航南1S 2F 3F RF</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">一航主體1T2F B</a>
+					<a class="nav-link " href="./1T.html">一航 主體 1T 2F BF</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">二航北2N 1F 2F 3F</a>
+					<a class="nav-link " href="./index.html">二航北2N 1F 2F 3F</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">二航南2S 1F 2F 3F</a>
+					<a class="nav-link " href="./2S.html">二航南 2S 1F 2F 3F</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">二航主體2T06 7-11 B </a>
+					<a class="nav-link " href="./2T.html">二航主體2T06 7-11 BF </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="http://apple.com">二航主體2T1F 2F 3F RF </a>
+					<a class="nav-link " href="./2TT.html">二航主體2T1F 2F 3F RF </a>
 				</li>
 				
 			</ul>
 		</div>
 	</div>
-
 <!--圖片一-->
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
-							1AEL-2T1F 02 04 05 08 09  二航2T 1F 
+						<h3  >
+							1AEL-2T1F 02 04 05 08 09
+						</h3>
+						<h3  >
+							二航2T 1F 
 						</h3>
 						<div class="row">
-							<div class="col-md-3" style="background-color: rgb(167, 247, 239, 0.3);">																
+							<!--<div class="col-md-3" style="background-color: rgb(167, 247, 239, 0.3);">																
 									<div  ><canvas class="illo"></canvas> </div>
 									<script src="./js/kirby-parasol.js"></script>
-							</div>
+							</div>-->
 							<div class="col-md-5">
 								<div class="ex1">
-									<img alt="1AEL-1T1F 01-06" src="../imageprocessing/1AEL-2T1F.png"  style="border:2px   #ccc solid;padding:1px;">
-									<h6 class="firPic1_num" id = "picdataPic1_1_1" > </h6>
-									<h2 class="firPic1_sta" id = "picdataPic1_1_2"></h2>
+									<img alt="1AEL-1T1F 01-06" src="../imageprocessing/1AEL-2T1F.png" width="300px"  height="300px" style="border:2px   #ccc solid;padding:1px;">
+									<h6 class="firPic1_num" id = "picdataPic1_1_1"> </h6>
+									<h6 class="firPic1_sta" id = "picdataPic1_1_2"></h6>
 
 									<h6 class="firPic2_num" id = "picdataPic1_2_1"></h6>
-									<h2 class="firPic2_sta" id = "picdataPic1_2_2"></h2>
+									<h6 class="firPic2_sta" id = "picdataPic1_2_2"></h6>
 									
 									<h6 class="firPic3_num" id = "picdataPic1_3_1"></h6> 
-									<h2 class="firPic3_sta" id = "picdataPic1_3_2"></h2> 
+									<h6 class="firPic3_sta" id = "picdataPic1_3_2"></h6> 
 
 									<h6 class="firPic4_num" id = "picdataPic1_4_1"></h6> 
-									<h2 class="firPic4_sta" id = "picdataPic1_4_2"></h2> 
+									<h6 class="firPic4_sta" id = "picdataPic1_4_2"></h6> 
 
 									<h6 class="firPic5_num" id = "picdataPic1_5_1"></h6>
-									<h2 class="firPic5_sta" id = "picdataPic1_5_2"></h2>  
+									<h6 class="firPic5_sta" id = "picdataPic1_5_2"></h6>  
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -760,38 +547,37 @@ div.test:hover:after {
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
-							1AEL-2T2F 01-07 二航2T2F 
+						<h3>
+							1AEL-2T2F 01-07 
+						</h3>
+						<h3>
+							二航2T2F 
 						</h3>
 						<div class="row">
-							<div class="col-md-2" style="background-color: rgb(167, 247, 239);">
-								<div>
-								
-								</div>
-							</div>
+							
 							<div class="col-md-5">
 								<div class="ex1">
-									<img alt="1AEL-2T2F 01-06" src="../imageprocessing/1AEL-2T2F.png"  style="border:2px    #ccc solid;padding:1px;">
+									<img alt="1AEL-2T2F 01-06" src="../imageprocessing/1AEL-2T2F.png" width="300px"  height="300px" style="border:2px    #ccc solid;padding:1px;">
 									<h6 class="secPic1_num" id = "picdataPic2_1_1" ></h6>
-									<h2 class="secPic1_sta" id = "picdataPic2_1_2"></h2>
+									<h6 class="secPic1_sta" id = "picdataPic2_1_2"></h6>
 
 									<h6 class="secPic2_num" id = "picdataPic2_2_1"></h6>
-									<h2 class="secPic2_sta" id = "picdataPic2_2_2"></h2>
+									<h6 class="secPic2_sta" id = "picdataPic2_2_2"></h6>
 									
 									<h6 class="secPic3_num" id = "picdataPic2_3_1"></h6> 
-									<h2 class="secPic3_sta" id = "picdataPic2_3_2"></h2> 
+									<h6 class="secPic3_sta" id = "picdataPic2_3_2"></h6> 
 
 									<h6 class="secPic4_num" id = "picdataPic2_4_1"></h6> 
-									<h2 class="secPic4_sta" id = "picdataPic2_4_2"></h2> 
+									<h6 class="secPic4_sta" id = "picdataPic2_4_2"></h6> 
 
 									<h6 class="secPic5_num" id = "picdataPic2_5_1"></h6>
-									<h2 class="secPic5_sta" id = "picdataPic2_5_2"></h2>  
+									<h6 class="secPic5_sta" id = "picdataPic2_5_2"></h6>  
   
 									<h6 class="secPic6_num" id = "picdataPic2_6_1"></h6> 
-									<h2 class="secPic6_sta" id = "picdataPic2_6_2"></h2>
+									<h6 class="secPic6_sta" id = "picdataPic2_6_2"></h6>
 									
 									<h6 class="secPic7_num" id = "picdataPic2_7_1"></h6> 
-									<h2 class="secPic7_sta" id = "picdataPic2_7_2"></h2> 
+									<h6 class="secPic7_sta" id = "picdataPic2_7_2"></h6> 
 								
 								</div>
 							</div>
@@ -857,35 +643,34 @@ div.test:hover:after {
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
-						<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
-							1AEL-2T3F 01-04 06 07  二航2T 3F
+						<h3>
+							1AEL-2T3F 01-04 06 07
+						</h3>
+						<h3>
+							二航2T 3F
 						</h3>
 						<div class="row">
-							<div class="col-md-2" style="background-color: rgb(167, 247, 239);">
-								<div>
-								
-								</div>
-							</div>
+							
 							<div class="col-md-5">
 								<div class="ex1">
-									<img alt="1AEL-1SRF 01-06" src="../imageprocessing/1AEL-2T3F.png"  style="border:2px   #ccc solid;padding:1px;">
+									<img alt="1AEL-1SRF 01-06" src="../imageprocessing/1AEL-2T3F.png" width="300px"  height="300px" style="border:2px   #ccc solid;padding:1px;">
 									<h6 class="thrPic1_num" id = "picdataPic3_1_1" > </h6>
-									<h2 class="thrPic1_sta" id = "picdataPic3_1_2"></h2>
+									<h6 class="thrPic1_sta" id = "picdataPic3_1_2"></h6>
 
 									<h6 class="thrPic2_num" id = "picdataPic3_2_1"></h6>
-									<h2 class="thrPic2_sta" id = "picdataPic3_2_2"></h2>
+									<h6 class="thrPic2_sta" id = "picdataPic3_2_2"></h6>
 									
 									<h6 class="thrPic3_num" id = "picdataPic3_3_1"></h6> 
-									<h2 class="thrPic3_sta" id = "picdataPic3_3_2"></h2> 
+									<h6 class="thrPic3_sta" id = "picdataPic3_3_2"></h6> 
 
 									<h6 class="thrPic4_num" id = "picdataPic3_4_1"></h6> 
-									<h2 class="thrPic4_sta" id = "picdataPic3_4_2"></h2> 
+									<h6 class="thrPic4_sta" id = "picdataPic3_4_2"></h6> 
 
 									<h6 class="thrPic5_num" id = "picdataPic3_5_1"></h6>
-									<h2 class="thrPic5_sta" id = "picdataPic3_5_2"></h2>  
+									<h6 class="thrPic5_sta" id = "picdataPic3_5_2"></h6>  
   
 									<h6 class="thrPic6_num" id = "picdataPic3_6_1"></h6> 
-									<h2 class="thrPic6_sta" id = "picdataPic3_6_2"></h2> 
+									<h6 class="thrPic6_sta" id = "picdataPic3_6_2"></h6> 
 
 								</div>
 							</div>
@@ -946,29 +731,28 @@ div.test:hover:after {
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h3 style="color: salmon; background-color: rgba(135, 207, 235, 0.438); font-weight: bolder; font-size: 400%; text-align: center;" >
-					1AEL-2TRF 03-06   二航2T RF
+				<h3 >
+					1AEL-2TRF 03-06
+				</h3>
+				<h3 >
+					 二航2T RF
 				</h3>
 				<div class="row">
-					<div class="col-md-2" style="background-color: rgb(167, 247, 239);">
-						<div>
-						
-						</div>
-					</div>
+					
 					<div class="col-md-5">
 						<div class="ex1">
-							<img alt="1AEL-2TRF 01-06" src="../imageprocessing/1AEL-2TRF.png"  style="border:2px   #ccc solid;padding:1px;">
+							<img alt="1AEL-2TRF 01-06" src="../imageprocessing/1AEL-2TRF.png" width="300px"  height="300px" style="border:2px   #ccc solid;padding:1px;">
 							<h6 class="fourPic1_num" id = "picdataPic4_1_1" > </h6>
-							<h2 class="fourPic1_sta" id = "picdataPic4_1_2"></h2>
+							<h6 class="fourPic1_sta" id = "picdataPic4_1_2"></h6>
 
 							<h6 class="fourPic2_num" id = "picdataPic4_2_1"></h6>
-							<h2 class="fourPic2_sta" id = "picdataPic4_2_2"></h2>
+							<h6 class="fourPic2_sta" id = "picdataPic4_2_2"></h6>
 							
 							<h6 class="fourPic3_num" id = "picdataPic4_3_1"></h6> 
-							<h2 class="fourPic3_sta" id = "picdataPic4_3_2"></h2> 
+							<h6 class="fourPic3_sta" id = "picdataPic4_3_2"></h6> 
 
 							<h6 class="fourPic4_num" id = "picdataPic4_4_1"></h6> 
-							<h2 class="fourPic4_sta" id = "picdataPic4_4_2"></h2> 
+							<h6 class="fourPic4_sta" id = "picdataPic4_4_2"></h6> 
 
 						</div>
 					</div>
